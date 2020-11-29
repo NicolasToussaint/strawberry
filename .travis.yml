@@ -38,7 +38,7 @@ after_success:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$CC_FOR_BUILD" == "gcc" ]] && [ -f ~/.ssh/id_rsa ]; then
       if [[ "$TRAVIS_BRANCH" == "master" ]]; then
         rsync -e "ssh -o StrictHostKeyChecking=no" -va strawberry*.dmg travis@echoes.jkvinge.net:/home/travis/builds/macos/highsierra/;
-      elif [[ "$TRAVIS_BRANCH" == "macos" ]]; then
+      elif [[ "$TRAVIS_BRANCH" == "travis" ]]; then
         rsync -e "ssh -o StrictHostKeyChecking=no" -va strawberry*.dmg travis@echoes.jkvinge.net:/home/travis/builds/macos/highsierra/;
       fi
     fi
